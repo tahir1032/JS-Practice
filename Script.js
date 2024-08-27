@@ -184,3 +184,17 @@ address:{
 
 // console.log(oldPerson.age, newPerson.age);
 
+let n = prompt("enter Number")
+
+function factorial(n){
+
+
+    if (n == 0 || n == 1){
+        return 1;
+    }
+    if(n<0){return ("enter Positve Integer")}
+
+    return n*factorial(n-1);
+}
+
+console.log(factorial(n))
