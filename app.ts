@@ -72,7 +72,6 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-// Custom input function that mimics prompt/input behavior
 function input(question: string): Promise<string> {
   return new Promise((resolve) => {
     rl.question(question, (answer) => {
@@ -112,7 +111,7 @@ async function userObject() {
     "My First Name is " +user.firstName +user.lastName +" My age is " +user.age +". \n My class Name is" +user.className +
       " My Friends are " +user.friends +" My Address is " +user.city +" " +user.street +" " +user.house +"."
   );
-  rl.close(); // Close the readline interface after getting all inputs
+  rl.close();
 }
 
 userObject();
@@ -131,7 +130,7 @@ const salaryCalc = async()=>{
   const totalSal = (aDaySal * workDays);
   console.log("Total Working Days Salary "+ totalSal)
 
-  rl.close(); // Close the readline interface after getting all inputs
+  rl.close(); 
   }
 console.log(salaryCalc());
 
