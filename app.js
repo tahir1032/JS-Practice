@@ -52,25 +52,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // })
 // }
 // Assisgnment--------------------------
-var readline = require("readline");
-var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-// Custom input function that mimics prompt/input behavior
-function input(question) {
-    return new Promise(function (resolve) {
-        rl.question(question, function (answer) {
-            resolve(answer);
-        });
-    });
-}
+// import * as readline from "readline";
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// function input(question: string): Promise<string> {
+//   return new Promise((resolve) => {
+//     rl.question(question, (answer) => {
+//       resolve(answer);
+//     });
+//   });
+// }
 // // Usage to get inputs
 // async function userObject() {
 //   type userObjType = {
 //     firstName: string;
 //     lastName: string;
-//     className: string;
+//     className:string;
 //     age: number;
 //     friends: string[];
 //     city: string;
@@ -88,22 +87,44 @@ function input(question) {
 //     house: await input("Enter House Number: \n"),
 //   };
 //   const newUser: userObjType[] = [user];
+//   // console.log(typeof(user.friends), user.friends);
 //   console.log(
 //     "My First Name is " +user.firstName +user.lastName +" My age is " +user.age +". \n My class Name is" +user.className +
 //       " My Friends are " +user.friends +" My Address is " +user.city +" " +user.street +" " +user.house +"."
 //   );
-//   rl.close(); // Close the readline interface after getting all inputs
+//   rl.close();
 // }
 // userObject();
-
-// ------------ Factorial Assisngment ------------------------------
-
-const num1 = prompt("Enter Value to Find Factorial");
-function factorial (num1) {
-    if (num1 == 0 || num1 == 1)
-    {
-        return 1;
-    }
-    return (num1*factorial(num1-1));
-}
-    console.log(factorial(num1));
+// ------------ Salary ------------------------------
+// const salaryCalc = async()=>{
+//   const salary = parseInt(await input("Monthly Enter Salary"));
+//   const aDaySal = (salary/30); 
+//   console.log("Per Day Salary " + aDaySal);
+//   const aWeekSal = (salary/7);
+//   console.log("Weekly Salary " + aWeekSal);
+//   const workDays = parseInt(await input("Enter Days of Working "));
+//   const totalSal = (aDaySal * workDays);
+//   console.log("Total Working Days Salary "+ totalSal)
+//   rl.close(); 
+//   }
+// console.log(salaryCalc());
+// Factorial ------------------------------------------------------------
+// let n = 5
+// function factorial(n:number) : number{
+//     if (n == 0 || n == 1){
+//         return 1;
+//     }
+//     return n*factorial(n-1);
+// }
+// console.log(factorial(n))
+//--------------------------------
+// Import prompt-sync
+var prompt_sync_1 = require("prompt-sync");
+// Create the prompt function
+var prompt = (0, prompt_sync_1.default)();
+// Use prompt to get user input
+var newObject = {
+    firstName: prompt("Enter your name: "),
+    age: parseInt(prompt("Enter your age: "), 10), // Base 10 parsing
+};
+console.log("Hello ".concat(newObject.firstName, ". You are ").concat(newObject.age, " years old."));
