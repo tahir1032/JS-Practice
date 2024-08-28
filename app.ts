@@ -81,12 +81,12 @@ function input(question: string): Promise<string> {
   });
 }
 
-// // Usage to get inputs
+// Usage to get inputs
 // async function userObject() {
 //   type userObjType = {
 //     firstName: string;
 //     lastName: string;
-//     className: string;
+//     className:string;
 //     age: number;
 //     friends: string[];
 //     city: string;
@@ -106,6 +106,8 @@ function input(question: string): Promise<string> {
 //   };
     
 //   const newUser: userObjType[] = [user];
+
+//   // console.log(typeof(user.friends), user.friends);
 //   console.log(
 //     "My First Name is " +user.firstName +user.lastName +" My age is " +user.age +". \n My class Name is" +user.className +
 //       " My Friends are " +user.friends +" My Address is " +user.city +" " +user.street +" " +user.house +"."
@@ -115,17 +117,38 @@ function input(question: string): Promise<string> {
 
 // userObject();
 
-// ------------ Factorial Assisngment ------------------------------
+// ------------ Salary ------------------------------
+
+// const salaryCalc = async()=>{
+//   const salary = parseInt(await input("Monthly Enter Salary"));
+
+//   const aDaySal = (salary/30); 
+//   console.log("Per Day Salary " + aDaySal);
+//   const aWeekSal = (salary/7);
+//   console.log("Weekly Salary " + aWeekSal);
+  
+//   const workDays = parseInt(await input("Enter Days of Working "));
+//   const totalSal = (aDaySal * workDays);
+//   console.log("Total Working Days Salary "+ totalSal)
+
+//   rl.close(); // Close the readline interface after getting all inputs
+//   }
+// console.log(salaryCalc());
 
 
-const num1 = parseInt(await input("Enter Value to Find Factorial"));
-const factorial = async (num1: number) => {
+// Factorial ------------------------------------------------------------
 
-    if (num1 == 0 || num1 == 1)
-    {
+let n = 5
+
+function factorial(n:number) : number{
+
+
+    if (n == 0 || n == 1){
         return 1;
     }
-    return (num1*factorial(num1-1));
+
+    return n*factorial(n-1);
 }
 
-    console.log(factorial(num1));
+console.log(factorial(n))
+

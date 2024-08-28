@@ -184,7 +184,7 @@ address:{
 
 // console.log(oldPerson.age, newPerson.age);
 
-let n = prompt("enter Number")
+let n = 5
 
 function factorial(n){
 
