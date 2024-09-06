@@ -65,20 +65,21 @@
 
 // Assisgnment--------------------------
 
-// import * as readline from "readline";
+import { parse } from "path";
+import * as readline from "readline";
 
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout,
-// });
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-// function input(question: string): Promise<string> {
-//   return new Promise((resolve) => {
-//     rl.question(question, (answer) => {
-//       resolve(answer);
-//     });
-//   });
-// }
+function input(question: string): Promise<string> {
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => {
+      resolve(answer);
+    });
+  });
+}
 
 // // Usage to get inputs
 // async function userObject() {
@@ -216,5 +217,14 @@
 
 // --------------------------------
 
+// let arr: string[] = ['tahir','khurram', 'hamza', 'haider'];
 
+// let arr1: string = arr.toString()
 
+// console.log(arr1.toUpperCase());
+
+let num:number[] = [1,4,9,16]
+
+let num1:number[] = num.map(Math.sqrt)
+
+console.log(num1)
